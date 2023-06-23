@@ -22,10 +22,12 @@ jobs:
         run: echo Hello, world!
 
       - name: Copy build folder to server
-        run: |
-          echo "$SSH_PRIVATE_KEY" > ssh_key
-          chmod 600 ssh_key
-          ssh ubuntu@3.28.171.175
-          sudo su
-          cd /var/www/html
-          mkdir githubActions
+        uses: appleboy/ssh-action@master
+        with:
+          host: 3.28.171.175
+          username: ubuntu
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            sudo su
+            cd /var/www/html
+            mkdir githubActions
