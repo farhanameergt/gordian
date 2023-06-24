@@ -28,7 +28,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            sudo su
+            sudo -i
             cd /var/www/html
             cd backend
             ls
