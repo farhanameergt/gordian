@@ -29,8 +29,10 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             sudo su
-            cd /var/www/html/
-            ../lib/node_modules/pm2/bin/pm2 restart 0
-            
+            cd /var/www/html
+            cd backend
+            export PATH=\$PATH:/root/.nvm/versions/node/v16.20.0/bin
+            /root/.nvm/versions/node/v16.20.0/bin/pm2 list
+            /root/.nvm/versions/node/v16.20.0/bin/pm2 restart 0
           
             
