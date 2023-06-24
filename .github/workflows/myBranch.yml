@@ -28,15 +28,12 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            sudo -i
+            sudo su -c ' export PATH=\$PATH:/root/.nvm/versions/node/v16.20.0/bin /root/.nvm/versions/node/v16.20.0/bin/pm2 list /root/.nvm/versions/node/v16.20.0/bin/pm2 restart 0 '
             cd /var/www/html
             cd backend
             ls
             whoami
-            chmod -R 777 /root/.nvm/versions/node/v16.20.0/bin/pm2
-            export PATH=\$PATH:/root/.nvm/versions/node/v16.20.0/bin
-            /root/.nvm/versions/node/v16.20.0/bin/pm2 list
-            /root/.nvm/versions/node/v16.20.0/bin/pm2 restart 0
+            bash listpm.sh
           
           
             
