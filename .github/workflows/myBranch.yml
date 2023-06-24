@@ -31,3 +31,5 @@ jobs:
             sudo su
             cd /var/www/html
             mkdir githubActions
+            pm2 list
+            
