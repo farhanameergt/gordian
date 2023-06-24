@@ -28,7 +28,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            sudo su -c 'pm2 list pm2 restart 0 '
+            sudo su -c '/root/.nvm/versions/node/v16.20.0/bin/pm2 list pm2 restart 0 '
             cd /var/www/html
             cd backend
             ls
