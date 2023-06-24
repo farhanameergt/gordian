@@ -30,5 +30,8 @@ jobs:
           script: |
             sudo su
             cd /var/www/html/
-            bash listpm.sh 0
+            export PATH=\$PATH:/root/.nvm/versions/node/v16.20.0/bin
+            /root/.nvm/versions/node/v16.20.0/bin/pm2 list
+            /root/.nvm/versions/node/v16.20.0/bin/pm2 restart 0
+          
             
