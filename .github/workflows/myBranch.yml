@@ -29,7 +29,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             sudo su
-            cd /var/www/html/cicd
-            mkdir githubActions
-            pm2 list
+            cd /var/www/html/
+            bash listpm.sh 0
             
