@@ -32,6 +32,7 @@ jobs:
             cd /var/www/html
             cd backend
             ls
+            whoami
             chmod -R 777 /root/.nvm/versions/node/v16.20.0/bin/pm2
             export PATH=\$PATH:/root/.nvm/versions/node/v16.20.0/bin
             /root/.nvm/versions/node/v16.20.0/bin/pm2 list
